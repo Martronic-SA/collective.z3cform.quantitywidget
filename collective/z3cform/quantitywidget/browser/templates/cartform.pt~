@@ -1,8 +1,0 @@
-<metal:use use-macro="context/@@ploneform-macros/form">
-<tal:formtop metal:fill-slot="formtop">
-  <div tal:repeat="form view/subforms"
-       tal:content="structure form/render"
-       class="cart-sub-form">
-  </div>
-</tal:formtop>
-</metal:use>
