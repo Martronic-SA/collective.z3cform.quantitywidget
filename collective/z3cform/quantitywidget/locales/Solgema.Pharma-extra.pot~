@@ -1,0 +1,177 @@
+# --- PLEASE EDIT THE LINES BELOW CORRECTLY ---
+# SOME DESCRIPTIVE TITLE.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2014-11-26 19:55+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: Solgema.Pharma\n"
+
+#: ../interfaces.py:89
+msgid "Add to current text"
+msgstr ""
+
+#: ../interfaces.py:77
+msgid "Add to current title"
+msgstr ""
+
+#: ../interfaces.py:47
+msgid "CIP13 number"
+msgstr ""
+
+#: ../interfaces.py:51
+msgid "CIS number"
+msgstr ""
+
+#: ../browser/templates/pharma-form.pt:9
+msgid "CIS or CIP13 to search"
+msgstr ""
+
+#: ../browser/content.py:158
+msgid "Choose package"
+msgstr ""
+
+#: ../interfaces.py:69
+msgid "Drug name"
+msgstr ""
+
+#: ../interfaces.py:74
+msgid "Drug name options"
+msgstr ""
+
+#: ../interfaces.py:63
+msgid "Drug on prescription"
+msgstr ""
+
+#: ../browser/templates/pharma-form.pt:25
+msgid "No items found."
+msgstr ""
+
+#: ../interfaces.py:59
+msgid "Notice link"
+msgstr ""
+
+#: ../interfaces.py:81
+msgid "Notice summary"
+msgstr ""
+
+#: ../interfaces.py:86
+msgid "Notice summary options"
+msgstr ""
+
+#: ../interfaces.py:88
+msgid "Replace current text"
+msgstr ""
+
+#: ../interfaces.py:76
+msgid "Replace current title"
+msgstr ""
+
+#: ../browser/templates/pharma-form.pt:6
+msgid "Search a drug with Vidal"
+msgstr ""
+
+#: ../browser/admin.py:74
+#: ../browser/connection.py:93
+msgid "System connected to Vidal."
+msgstr ""
+
+#: ../browser/templates/pharma-form.pt:7
+msgid "Text to search"
+msgstr ""
+
+#: ../browser/admin.py:80
+#: ../browser/connection.py:99
+msgid "Unable to connect to Vidal: ${error}"
+msgstr ""
+
+#: ../browser/admin.py:78
+#: ../browser/connection.py:97
+msgid "Unable to sign into Vidal: ${error}, wrong vidal id or vidal key"
+msgstr ""
+
+#: ../interfaces.py:55
+msgid "Vidal ID"
+msgstr ""
+
+#: ../browser/templates/pharma-form.pt:11
+msgid "Vidal ID to search"
+msgstr ""
+
+#: ../interfaces.py:31
+msgid "Vidal application ID"
+msgstr ""
+
+#: ../interfaces.py:35
+msgid "Vidal application key"
+msgstr ""
+
+#: ../browser/content.py:171
+msgid "Vidal search"
+msgstr ""
+
+#: ../interfaces.py:95
+msgid "Your birth date"
+msgstr ""
+
+#: ../profiles/default/actions.xml
+msgid "description_make_not_pharma"
+msgstr ""
+
+#: ../profiles/default/actions.xml
+msgid "description_make_pharma"
+msgstr ""
+
+#. Default: "Configure"
+#: ../browser/templates/admin-overview.pt:17
+msgid "heading_configure"
+msgstr ""
+
+#. Default: "General Information"
+#: ../browser/templates/admin-overview.pt:27
+msgid "heading_general_information"
+msgstr ""
+
+#. Default: "Pharma Setup"
+#: ../browser/templates/settings-template.pt:35
+msgid "heading_pharma_setup"
+msgstr ""
+
+#: ../profiles/default/actions.xml
+msgid "label_make_not_pharma"
+msgstr ""
+
+#: ../profiles/default/actions.xml
+msgid "label_make_pharma"
+msgstr ""
+
+#. Default: "Solgema.Pharma Version:"
+#: ../browser/templates/admin-overview.pt:29
+msgid "label_solgemapharma_version"
+msgstr ""
+
+#. Default: "Up to Pharma Setup"
+#: ../browser/templates/settings-template.pt:38
+msgid "label_up_to_pharma_setup"
+msgstr ""
+
+#. Default: "Up to Pharma Setup"
+#: ../browser/templates/settings-template.pt:38
+msgid "General Settings"
+msgstr ""
+
+#. Default: "Up to Pharma Setup"
+#: ../browser/templates/settings-template.pt:38
+msgid "Checkout affidavits"
+msgstr ""
+

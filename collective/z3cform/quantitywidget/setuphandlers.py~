@@ -1,0 +1,43 @@
+import logging
+from StringIO import StringIO
+
+from Acquisition import aq_base
+from Products.CMFCore.utils import getToolByName
+
+from zope.interface import implements, directlyProvides
+from Products.CMFCore import permissions
+from Products.CMFCore.interfaces import ISiteRoot
+from zope.component import getUtility, getAdapters, getMultiAdapter
+from zope.component import getSiteManager
+from plugins import odoopas
+from zope.interface.interfaces import IInterface
+#from zope.interface.interfaces import InterfaceClass
+from plone.browserlayer import utils
+import interfaces
+from Products.PlonePAS.Extensions.Install import activatePluginInterfaces
+LOG = logging.getLogger(__name__)
+
+def setupOdoo4Plone(context):
+    if context.readDataFile('odoo_various.txt') is None:
+        return
+    site = context.getSite()
+    gsm = getSiteManager(site)
+    uf = site.acl_users
+    
+    LOG.debug("\nPlugin setup")
+
+    plone_pas = uf.manage_addProduct['Martronic.Odoo4Plone']
+    
+    found = uf.objectIds(['OdooPAS plugin'])
+    if not found:
+        plone_pas.addOdooPASPlugin('odoo_pas', 'OdooPAS plugin')
+        if hasattr(site, 'RAMCache'):
+            found = uf.objectIds(['OdooPAS plugin'])
+            found[0].ZCacheable_setManagerId('RAMCache')
+    activatePluginInterfaces(site, 'odoo_pas')
+                              
+def uninstallOdoo4Plone(context):
+    if context.readDataFile('odoo_uninstall.txt') is None:
+        return
+    site = context.getSite()
+    gsm = getSiteManager(site)

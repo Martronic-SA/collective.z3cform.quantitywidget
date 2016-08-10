@@ -1,0 +1,58 @@
+import logging
+from zope.schema import vocabulary
+from zope.component.hooks import getSite
+from zope.interface import implements
+from zope.schema.interfaces import IContextSourceBinder
+from zope.schema.vocabulary import SimpleVocabulary
+import interfaces
+
+LOG = logging.getLogger(__name__)
+
+class TitledVocabulary(vocabulary.SimpleVocabulary):
+
+    def fromTitles(cls, items, *interfaces):
+        terms = [cls.createTerm(value,value,title) for (value,title) in items]
+        return cls(terms, *interfaces)
+    fromTitles = classmethod(fromTitles)
+
+    def fromValuesTitles(cls, items, *interfaces):
+        terms = [cls.createTerm(value,term,title) for (value,term,title) in items]
+        return cls(terms, *interfaces)
+    fromValuesTitles = classmethod(fromValuesTitles)
+
+    def getTerm(self, value):
+        """See zope.schema.interfaces.IBaseVocabulary"""
+        try:
+            if isinstance(value, (list, tuple)):
+                value = value[0]
+            return self.by_value[value]
+        except KeyError:
+            return vocabulary.SimpleVocabulary.createTerm('','','')
+        else:
+            raise ValueError(str(value))
+
+    def getTermByToken(self, token):
+        """See zope.schema.interfaces.IVocabularyTokenized"""
+        try:
+            return self.by_token[token]
+        except KeyError:
+            return vocabulary.SimpleVocabulary.createTerm('','','')
+
+def ConfigsVocabulary( context ):
+    context = getSite()
+    settings = interfaces.IOdooSettings(context, None)
+    if not settings:
+        return TitledVocabulary.fromTitles( [] )
+    li = []
+    for config in settings.odoo_configs:
+        li.append((config.uid, config.name))
+    return TitledVocabulary.fromTitles( li )
+
+def ModelVocabulary( object ):
+    adapted = interfaces.IOdooContentAdapter(context)
+    if not adapted:
+        return TitledVocabulary.fromTitles( [] )
+    data = adapted.current_model.search_read(fields=['id', 'name', 'name_template'])
+    li = [(a['id'], a.get('name_template', a.get('name'))) for a in data]
+    return TitledVocabulary.fromTitles( li )
+

@@ -1,0 +1,530 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Solgema\n"
+"POT-Creation-Date: 2015-02-18 13:47+0000\n"
+"PO-Revision-Date: 2007-12-14 16:01+0100\n"
+"Last-Translator: Martronic SA <martronic@martronic.ch>\n"
+"Language-Team: EDF\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: fr\n"
+"Language-Name: Français\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: Solgema.Pharma\n"
+"X-Is-Fallback-For: fr-be fr-ca fr-lu fr-mc fr-ch fr-fr\n"
+
+#: ../interfaces.py:126
+msgid "Add to current text"
+msgstr "Ajouter au texte courant"
+
+#: ../interfaces.py:114
+msgid "Add to current title"
+msgstr "Ajouter au titre courant"
+
+#: ../interfaces.py:187
+msgid "Are you pregnant?"
+msgstr "Êtes-vous enceinte?"
+
+#: ../interfaces.py:200
+msgid "Are you taking drugs actually?"
+msgstr "Prenez-vous actuellement des médicaments?"
+
+#: ../browser/templates/migrate-old-form.pt:8
+msgid "Articles found without VidalID"
+msgstr "Articles trouvé sans VidalID"
+
+#: ../browser/templates/checkout-pharmaformular-summary-admin.pt:11
+#: ../browser/templates/checkout-pharmaformular-summary.pt:6
+#: ../browser/templates/user-formulars.pt:8
+msgid "Birthdate"
+msgstr "Date de naissance"
+
+#: ../profiles/default/portal_atct.xml
+msgid "CIP13"
+msgstr "CIP13"
+
+#: ../interfaces.py:80
+msgid "CIP13 number"
+msgstr "Numéro CIP13"
+
+#: ../profiles/default/portal_atct.xml
+msgid "CIS"
+msgstr "CIS"
+
+#: ../interfaces.py:84
+msgid "CIS number"
+msgstr "Numéro CIS"
+
+#: ../browser/templates/pharma-add-form.pt:31
+#: ../browser/templates/pharma-form.pt:12
+msgid "CIS or CIP13 to search"
+msgstr "CIS ou CIP13"
+
+#: ../browser/content.py:350
+msgid "CSV Separator"
+msgstr "Séparateur CSV"
+
+#: ../interfaces.py:58
+msgid "Checkbox Title for interactions affidavit"
+msgstr "Titre de la case à cocher pour les interactions médicamenteuses"
+
+#: ../interfaces.py:51
+msgid "Checkbox Title for medical formular affidavit"
+msgstr "Titre de la case à cocher pour l'attestation du formulaire médical"
+
+#: ../interfaces.py:61
+msgid "Checkbox description for interactions affidavit"
+msgstr "Description de la case à cocher pour les interactions médicamenteuses"
+
+#: ../interfaces.py:54
+msgid "Checkbox description for medical formular affidavit"
+msgstr "Description de la case à cocher pour l'attestation du formulaire médical"
+
+#: ../browser/admin.py:95
+msgid "Checkout Affidavits"
+msgstr "Attestions de commande"
+
+#. Default: "Up to Pharma Setup"
+#: ../browser/templates/settings-template.pt:38
+msgid "Checkout affidavits"
+msgstr "Textes du processus de commande"
+
+#: ../browser/content.py:564
+msgid "Choose"
+msgstr ""
+
+#: ../browser/content.py:132
+msgid "Choose package"
+msgstr "Choisir"
+
+#. Default: "Concerned drugs"
+#: ../interfaces.py:243
+msgid "Concerned drugs"
+msgstr "Médicaments concernés"
+
+#: ../browser/content.py:143
+msgid "Create drug"
+msgstr "Créer le médicament"
+
+#: ../interfaces.py:156
+msgid "Customer too young."
+msgstr "Le client est trop jeune."
+
+#. Default: "Description"
+#: ../interfaces.py:256
+msgid "Description"
+msgstr "Description"
+
+#: ../browser/user.py:145
+msgid "Discussions for ${user_name}"
+msgstr "Discussions pour ${user_name}"
+
+#: ../interfaces.py:221
+msgid "Do you have any allergies?"
+msgstr "Avez-vous des allergies?"
+
+#. Default: "Drug"
+#: ../content.py:50
+#: ../interfaces.py:214
+#: ../profiles/default/actions.xml
+msgid "Drug"
+msgstr "Médicament"
+
+#: ../interfaces.py:106
+msgid "Drug name"
+msgstr "Nom du médicament"
+
+#: ../interfaces.py:111
+msgid "Drug name options"
+msgstr "Options pour le nom"
+
+#: ../interfaces.py:100
+msgid "Drug on prescription"
+msgstr "Médicament sur ordonnance"
+
+#: ../interfaces.py:182
+msgid "Drugs are not sold to people under 16 years old."
+msgstr "Pour acheter des médicaments vous devez être agé d'au moins 16 ans révolus."
+
+#: ../browser/templates/migrate-old-form.pt:39
+msgid "Following items have a bad product code"
+msgstr "Les éléments suivants ont un mauvais code produit."
+
+#: ../browser/templates/migrate-old-form.pt:21
+msgid "Following items have been successfully migrated"
+msgstr "Les éléments suivants ont été mis à jour avec succès."
+
+#: ../browser/templates/migrate-old-form.pt:30
+msgid "Following items have no product code"
+msgstr "Les éléments suivants n'ont pas de code produit."
+
+#: ../browser/templates/migrate-old-form.pt:48
+msgid "Following items with CIP7 have not been found in csv file"
+msgstr "Les éléments suivants n'ont pas été trouvés dans le fichier csv des correspondances."
+
+#: ../browser/templates/migrate-old-form.pt:81
+msgid "Following products have multiple results found on Vidal"
+msgstr "Les éléments suivants ont plusieurs résultats sur Vidal."
+
+#: ../browser/templates/migrate-old-form.pt:72
+msgid "Following products have not been found on Vidal"
+msgstr "Les éléments suivants n'ont pas été trouvés sur Vidal."
+
+#. Default: "Up to Pharma Setup"
+#: ../browser/templates/settings-template.pt:38
+msgid "General Settings"
+msgstr "Configuration générale"
+
+#: ../browser/templates/checkout-pharmaformular-summary-admin.pt:19
+#: ../browser/templates/checkout-pharmaformular-summary.pt:14
+#: ../browser/templates/user-formulars.pt:14
+msgid "Has allergies"
+msgstr "A des allergies"
+
+#: ../browser/templates/checkout-pharmaformular-summary-admin.pt:7
+msgid "Hide formular history"
+msgstr "Cacher l'historique"
+
+#: ../browser/checkout.py:108
+msgid "Invalid date, date format is jj/mm/aaaa (23/07/1950)"
+msgstr ""
+
+#: ../browser/templates/checkout-pharmaformular-summary-admin.pt:13
+#: ../browser/templates/checkout-pharmaformular-summary.pt:8
+#: ../browser/templates/user-formulars.pt:10
+msgid "Is Under Treatment"
+msgstr "Suit un traitement"
+
+#: ../browser/templates/checkout-pharmaformular-summary-admin.pt:12
+#: ../browser/templates/checkout-pharmaformular-summary.pt:7
+#: ../browser/templates/user-formulars.pt:9
+msgid "Is pregnant"
+msgstr "Est enceinte"
+
+#: ../browser/templates/user-comments-admin.pt:6
+msgid "Last customer discussion messages"
+msgstr "Derniers messages en attente"
+
+#: ../browser/templates/user-comments.pt:4
+msgid "Last personal discussion messages"
+msgstr "Derniers messages personnels"
+
+#: ../browser/content.py:455
+msgid "Migrate"
+msgstr "Migrer"
+
+#: ../browser/user.py:198
+msgid "My Discussions"
+msgstr "Mes discussions"
+
+#. Default: "Non"
+msgid "No"
+msgstr "Non"
+
+#: ../browser/templates/migrate-old-form.pt:63
+msgid "No CIP7 given in csv file"
+msgstr "Aucun CIP7 donné dans le fichier csv."
+
+#: ../browser/templates/migrate-old-form.pt:17
+#: ../browser/templates/pharma-add-form.pt:51
+#: ../browser/templates/pharma-form.pt:32
+msgid "No items found."
+msgstr "Aucun élément trouvé"
+
+#: ../browser/templates/notice-link.pt:1
+msgid "Notice available on the website of the Drug national security agency (in a new window)"
+msgstr "Notice disponible sur le site de l'Agence nationale de Sécurité des Médicaments (dans une nouvelle fenêtre)"
+
+#: ../interfaces.py:92
+msgid "Notice link"
+msgstr "Lien vers la notice"
+
+#: ../interfaces.py:118
+msgid "Notice summary"
+msgstr "Résumé de la notice"
+
+#: ../interfaces.py:123
+msgid "Notice summary options"
+msgstr "Options pour le résumé"
+
+#: ../interfaces.py:216
+msgid "Please precise the drugs you're taking."
+msgstr "Veuillez précise les médicaments que vous prenez actuellement."
+
+#. Default: "Read"
+#: ../interfaces.py:260
+msgid "Read"
+msgstr "Lu"
+
+#: ../interfaces.py:125
+msgid "Replace current text"
+msgstr "Remplacer le texte courant"
+
+#: ../interfaces.py:113
+msgid "Replace current title"
+msgstr "Remplacer le titre courant"
+
+#: ../browser/templates/pharma-add-form.pt:25
+#: ../browser/templates/pharma-form.pt:6
+msgid "Search a drug with Vidal"
+msgstr "Rechercher un médicament avec Vidal"
+
+#: ../browser/templates/user-comments.pt:12
+msgid "See all duscussions"
+msgstr "Voir toutes les discussions"
+
+#: ../browser/templates/user-comments-admin.pt:13
+msgid "See discussion"
+msgstr "Voir la discussion"
+
+#. Default: "Severity"
+#: ../interfaces.py:258
+msgid "Severity"
+msgstr "Sévérité"
+
+#: ../browser/templates/checkout-pharmaformular-summary-admin.pt:6
+msgid "Show formular history (${number})"
+msgstr "Afficher l'historique des formulaires médicaux (${number})"
+
+#: ../browser/admin.py:78
+#: ../browser/connection.py:104
+msgid "System connected to Vidal."
+msgstr "Système connecté à Vidal"
+
+#: ../browser/content.py:354
+msgid "Test, dont update database"
+msgstr "Tester uniquement, ne met pas à jour la base de données."
+
+#: ../interfaces.py:65
+msgid "Text for Vidal Connexion Error"
+msgstr "Text en cas d'erreur de connexion au service Vidal"
+
+#: ../browser/templates/pharma-add-form.pt:27
+#: ../browser/templates/pharma-form.pt:8
+msgid "Text to search"
+msgstr "Texte"
+
+#: ../interfaces.py:62
+msgid "That text will be displayed in the bottom of the interactions step in the checkout form."
+msgstr "Ce texte sera affiché au bas de l'étape des interactions dans le processus de commande."
+
+#: ../interfaces.py:55
+msgid "That text will be displayed in the bottom of the medical formular step in the checkout form."
+msgstr "Ce texte sera affiché au bas de l'étape du formulaire médical dans le processus de commande."
+
+#: ../interfaces.py:66
+msgid "That text will be displayed in the interactions step in case of Vidal connection error."
+msgstr "Ce texte sera affiché dans l'étape des interactions en cas d'erreur de connection au serveur Vidal."
+
+#: ../browser/templates/checkout-pharmaformular-summary-admin.pt:3
+#: ../browser/templates/checkout-pharmaformular-summary.pt:3
+msgid "The medical formular has been created."
+msgstr "Le formulaire médical a été créé."
+
+#: ../browser/templates/checkout-pharmaformular-summary-admin.pt:4
+#: ../browser/templates/checkout-pharmaformular-summary.pt:4
+#: ../interfaces.py:229
+msgid "The medical formular has been modified since last order."
+msgstr "Le formulaire médical a été modifié depuis la dernière commande."
+
+#. Default: "Title"
+#: ../interfaces.py:254
+msgid "Title"
+msgstr "Titre"
+
+#: ../interfaces.py:225
+msgid "To which substances are you allergic?"
+msgstr "À quelles substances êtes-vous allergique?"
+
+#: ../interfaces.py:272
+msgid "Unable to connect to Vidal"
+msgstr "Impossible de se connecter à Vidal"
+
+#: ../browser/admin.py:84
+#: ../browser/connection.py:115
+msgid "Unable to connect to Vidal: ${error}"
+msgstr "Impossible de se connecter à Vidal: ${error}"
+
+#: ../interfaces.py:153
+msgid "Unable to parse date."
+msgstr "Impossible de trouver la date."
+
+#: ../browser/admin.py:82
+#: ../browser/connection.py:113
+msgid "Unable to sign into Vidal: ${error}, wrong vidal id or vidal key"
+msgstr "Impossible de se connecter à Vidal: ${error}, mauvais identifant ou clé Vidal"
+
+#: ../browser/user.py:146
+msgid "User Discussions"
+msgstr "Discussions de l'utilisateur"
+
+#: ../browser/connection.py:318
+#: ../interfaces.py:88
+msgid "Vidal ID"
+msgstr "Identifiant Vidal"
+
+#: ../browser/templates/pharma-add-form.pt:35
+#: ../browser/templates/pharma-form.pt:16
+msgid "Vidal ID to search"
+msgstr "Identifiant Vidal"
+
+#: ../interfaces.py:41
+msgid "Vidal application ID"
+msgstr "ID de l'application Vidal"
+
+#: ../interfaces.py:45
+msgid "Vidal application key"
+msgstr "Clé de l'application Vidal"
+
+#: ../browser/connection.py:337
+#: ../browser/content.py:107
+msgid "Vidal search"
+msgstr "Rechercher dans Vidal"
+
+#: ../profiles/default/portal_atct.xml
+msgid "VidalID"
+msgstr "VidalID"
+
+#: ../browser/templates/checkout-medical-interactions-summary.pt:5
+msgid "View medical interactions"
+msgstr "Voir les interactions médicameuteuses"
+
+#: ../browser/user.py:204
+msgid "We will answer you as soon as possible."
+msgstr "Nous vous répondrons dès que possible."
+
+#. Default: "Oui"
+msgid "Yes"
+msgstr "Oui"
+
+#: ../content.py:156
+msgid "You are not allowed to pass your order as anonymous (without log in) since you cart contains drugs."
+msgstr "Vous n'êtes pas autorisé à passer votre commande en anonyme (sans vous connecter) car votre panier contient des médicaments. Merci de vous connecter ou de créer votre compte."
+
+#: ../interfaces.py:181
+msgid "Your birth date"
+msgstr "Votre date de naissance"
+
+#: ../browser/user.py:203
+msgid "Your message"
+msgstr "Votre message"
+
+#: ../browser/user.py:230
+msgid "Your question has been posted to the pharmacist. You will be answered soon."
+msgstr "Votre question a été posée au pharmacien. Vous recevrez une réponse bientôt."
+
+#. Default: "Medical interactions"
+#: ../browser/templates/checkout-medical-interactions-summary.pt:3
+#: ../browser/templates/checkout-medical-interactions.pt:20
+msgid "checkout-medical-interactions"
+msgstr "Interactions médicamenteuses"
+
+#. Default: "Medical formular"
+#: ../browser/templates/checkout-pharmaformular-form.pt:20
+#: ../browser/templates/checkout-pharmaformular-summary-admin.pt:2
+#: ../browser/templates/checkout-pharmaformular-summary.pt:2
+msgid "checkout-pharmaformular"
+msgstr "Formulaire médical"
+
+#: ../profiles/default/actions.xml
+msgid "description_make_not_pharma"
+msgstr "Ne plus utiliser comme médicament"
+
+#: ../profiles/default/actions.xml
+msgid "description_make_pharma"
+msgstr "Utiliser comme médicament"
+
+#. Default: "Configure"
+#: ../browser/templates/admin-overview.pt:17
+msgid "heading_configure"
+msgstr "Configuration"
+
+#. Default: "General Information"
+#: ../browser/templates/admin-overview.pt:27
+msgid "heading_general_information"
+msgstr "Informations générales"
+
+#. Default: "Pharma Setup"
+#: ../browser/templates/settings-template.pt:35
+msgid "heading_pharma_setup"
+msgstr "Configuration de Solgema Pharma"
+
+#. Default: "By checking this case, you confirm that the informations you entered above are complete and correct."
+#: ../interfaces.py:237
+msgid "help_accept_pharma_formular_affidavit"
+msgstr "En cochant cette case, vous confirmez que les informations fournies ci-dessus sont complètes et correctes."
+
+#. Default: "By checking this case, you confirm that you have read the medical interactions."
+#: ../interfaces.py:277
+msgid "help_accept_pharma_interactions_affidavit"
+msgstr "En cochant cette case, vous confirmez avoir pris connaissances des interactions médicamenteuses."
+
+#. Default: "Several interactions between the drugs you've choosen has been found."
+#: ../interfaces.py:267
+msgid "help_medical_interactions"
+msgstr "Des interactions médicamenteuses on été trouvées."
+
+#. Default: "Your CSV migration file with headers (CIP13, CIP7, CIS, VIDALID)."
+#: ../browser/content.py:346
+msgid "help_migration_file"
+msgstr "Votre fichier de migration csv avec les entêtes CIP13 et CIP7 (CIS et VIDALID facultatif)"
+
+#. Default: "Accept Affidavit"
+#: ../interfaces.py:235
+msgid "label_accept_pharma_formular_affidavit"
+msgstr "Attestation pour le formulaire médical"
+
+#. Default: "Accept Affidavit"
+#: ../interfaces.py:275
+msgid "label_accept_pharma_interactions_affidavit"
+msgstr "Attestation pour les interactions médicamenteuses"
+
+#: ../profiles/default/actions.xml
+msgid "label_make_not_pharma"
+msgstr "Ne plus utiliser comme médicament"
+
+#: ../profiles/default/actions.xml
+msgid "label_make_pharma"
+msgstr "Utiliser comme médicament"
+
+#. Default: "Medical formular ${date}"
+#: ../browser/templates/checkout-pharmaformular-summary-admin.pt:25
+#: ../browser/templates/user-formulars.pt:5
+msgid "label_medical_formular_date"
+msgstr "Formulaire médical ${date}"
+
+#. Default: "Medical interactions"
+#: ../interfaces.py:265
+msgid "label_medical_interactions"
+msgstr "Interactions médicamenteuses"
+
+#. Default: "CSV file"
+#: ../browser/content.py:345
+msgid "label_migration_file"
+msgstr "Fichier de migration"
+
+#. Default: "Solgema.Pharma Version:"
+#: ../browser/templates/admin-overview.pt:29
+msgid "label_solgemapharma_version"
+msgstr "Version de Solgema Pharma"
+
+#. Default: "Up to Pharma Setup"
+#: ../browser/templates/settings-template.pt:38
+msgid "label_up_to_pharma_setup"
+msgstr "Retour à la configuration de Solgema Pharma"
+
+#. Default: "Durg's name"
+#: ../browser/connection.py:313
+msgid "label_vidal_query"
+msgstr "Nom du médicament"
+
+#: ../profiles/default/portal_atct.xml
+msgid "notice_link"
+msgstr "Lien vers la notice"
+
+#: ../profiles/default/portal_atct.xml
+msgid "prescription"
+msgstr "Prescription"
+

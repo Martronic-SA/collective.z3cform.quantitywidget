@@ -1,0 +1,11 @@
+from zope.i18nmessageid import MessageFactory
+_ = MessageFactory('collective.Odoo')
+
+def fixEncode(msg):
+    try:
+        return str(msg)
+    except:
+        try:
+            return str(msg.decode('utf-8'))
+        except:
+            return str(msg.encode('utf-8'))

@@ -1,0 +1,162 @@
+# -*- coding: utf-8 --
+import logging
+import xmlrpclib
+import csv
+from persistent import Persistent
+from Products.CMFCore.interfaces import ISiteRoot
+from Products.CMFCore.utils import getToolByName
+from Products.Five.utilities import marker
+from zope import component, schema
+from zope.interface import implements, directlyProvidedBy
+from zope.annotation import factory
+from zope.annotation.interfaces import IAnnotations
+from persistent.dict import PersistentDict
+from zope.component.hooks import getSite
+from openerplib import get_connection
+from Solgema.GetPaid.adapters import LineItemDeletionAdapter
+from Solgema.GetPaid import interfaces as isgp
+from Solgema.Pharma.config import _
+import interfaces
+
+LOG = logging.getLogger(__name__)
+   
+class SolgemaPharmaSettingsAdapter(Persistent):
+    implements(interfaces.ISolgemaPharmaSettings)
+    component.adapts(ISiteRoot)
+    
+    def __init__(self):
+        for iface in list(directlyProvidedBy(self)):
+            for field in [iface.get(name) for name in iface.names() if schema.interfaces.IField.providedBy(iface.get(name))]:
+                setattr(self, field.__name__, field.default)
+
+SolgemaPharmaSettings = factory(SolgemaPharmaSettingsAdapter)
+
+class SolgemaPharmaDisclaimersAdapter(Persistent):
+    implements(interfaces.ISolgemaPharmaDisclaimerSettings)
+    component.adapts(ISiteRoot)
+    
+    def __init__(self):
+        for iface in list(directlyProvidedBy(self)):
+            for field in [iface.get(name) for name in iface.names() if schema.interfaces.IField.providedBy(iface.get(name))]:
+                setattr(self, field.__name__, field.default)
+
+SolgemaPharmaDisclaimers = factory(SolgemaPharmaDisclaimersAdapter)
+
+class PharmaContentAdapter(Persistent):
+    implements(interfaces.IPharmaContent)
+    component.adapts(interfaces.IPharmaContentMarker)
+    
+    group_id = u'pharma_content'
+    label = _(u'Drug')
+    lineItemMarker = interfaces.IPharmaLineItemMarker
+    
+    def __init__(self):
+        for iface in list(directlyProvidedBy(self)):
+            for field in [iface.get(name) for name in iface.names() if schema.interfaces.IField.providedBy(iface.get(name))]:
+                setattr(self, field.__name__, field.default)
+
+PharmaContent = factory(PharmaContentAdapter)
+
+class PharmaLineItemAdapter(Persistent):
+    implements(interfaces.IPharmaContent)
+    component.adapts(interfaces.IPharmaLineItemMarker)
+    
+    def __init__(self):
+        for iface in list(directlyProvidedBy(self)):
+            for field in [iface.get(name) for name in iface.names() if schema.interfaces.IField.providedBy(iface.get(name))]:
+                setattr(self, field.__name__, field.default)
+
+    def setExtraContent(self, factory, lineitem, **kwargs):
+        article = lineitem.resolve()
+        adapted = interfaces.IPharmaContent(article, None)
+        if adapted:
+            marker.mark(factory.cart, interfaces.IMedicalOrder)
+            line = interfaces.IPharmaContent(lineitem)
+            for name, field in schema.getFieldsInOrder(interfaces.IPharmaContent):
+                getMethodName = 'get'+name.capitalize()
+                getMethod = getattr(article, getMethodName, None)
+                if callable(getMethod):
+                    value = getMethod()
+                else:
+                    try:
+                        value = field.bind(article).get(adapted)
+                    except AttributeError:
+                        continue
+                field.bind(lineitem).set( line, value )
+    """ Don't query interactions now, but in checkout
+        portal = getToolByName(getSite(), "portal_url").getPortalObject()
+        connection = interfaces.ISolgemaPharmaVidalConnection(portal)
+        VidalIDs = [adapted.VidalID,]
+        for item in factory.cart.values():
+            VidalIDs.append(interfaces.IPharmaContent(item).VidalID)
+        items = connection.getVidalInteractionsData(VidalIDs)
+        final = {}
+        for item in items:
+            item['read'] = False
+            ids = item['concerned_drugs']
+            if ids[0] < ids[1]:
+                key = (ids[0], ids[1])
+            else:
+                key = (ids[1], ids[0])
+            if not final.get(key):
+                final[key] = {'title':item['title'], 'interactions':[item,]}
+            else:
+                final[key]['interactions'].append(item)
+        factory.cart.medical_interactions = final
+    """
+PharmaLineItem = factory(PharmaLineItemAdapter)
+
+class PharmaLineItemDeletionAdapter(LineItemDeletionAdapter):
+    implements(isgp.ILineItemDeletion)  
+
+    def __init__(self, cart, lineitem):   
+        self.cart = cart
+        self.lineitem = lineitem
+
+    def delete(self, key):
+        self.cart.__base_delitem__(key)
+        VidalIDs = []
+        for item in self.cart.values():
+            if interfaces.IPharmaContent(item, None):
+                VidalIDs.append(interfaces.IPharmaContent(item).VidalID)
+        if not VidalIDs:
+            marker.erase(self.cart, interfaces.IMedicalOrder)
+        return {}
+    
+    """
+    def delete(self, key):
+        self.cart.__base_delitem__(key)
+        portal = getToolByName(getSite(), "portal_url").getPortalObject()
+        connection = interfaces.ISolgemaPharmaVidalConnection(portal)
+        VidalIDs = []
+        for item in self.cart.values():
+            if interfaces.IPharmaContent(item, None):
+                VidalIDs.append(interfaces.IPharmaContent(item).VidalID)
+        if not VidalIDs:
+            marker.erase(self.cart, interfaces.IMedicalOrder)
+            return {}
+        items = connection.getVidalInteractionsData(VidalIDs)
+        final = {}
+        for item in items:
+            item['read'] = False
+            ids = item['concerned_drugs']
+            if ids[0] < ids[1]:
+                key = (ids[0], ids[1])
+            else:
+                key = (ids[1], ids[0])
+            if not final.get(key):
+                final[key] = {'title':item['title'], 'interactions':[item,]}
+            else:
+                final[key]['interactions'].append(item)
+        self.cart.medical_interactions = final
+    """
+    
+class AllowAnonymousCheckout(object):
+
+    message = _(u'You are not allowed to pass your order as anonymous (without log in) since you cart contains drugs.')
+    
+    def __init__(self, context):
+        self.context = context
+    
+    def allow(self):
+        return False

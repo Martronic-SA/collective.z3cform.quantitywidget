@@ -1,0 +1,10 @@
+from Products.CMFCore.permissions import setDefaultRoles
+from AccessControl import ModuleSecurityInfo
+
+security = ModuleSecurityInfo("Solgema.Pharma.permissions")
+
+# Controls access to the "sharing" page
+security.declarePublic("AddDrug")
+AddRealEstate = "Solgema Pharma: Add Drug"
+setDefaultRoles(AddRealEstate, ('Manager', 'Site Administrator', 'RealEstateCreator'))
+
